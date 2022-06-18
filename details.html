@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/details.css">
+    <link rel="stylesheet" href="assets/icomoon/style.css">
+</head>
+<body>
+    <div class="nav">
+        <div>
+            <a href="index.html" class="logo"><i class="icon-angle-left"></i> Ultra</a>
+            <div class="store">
+                <h3>Store Mode</h3>
+            </div>
+        </div>
+    </div>
+    <div class="details">
+        <div>
+            <div class="header">
+    
+            </div>
+            <article>
+                <div class="img">
+                    <img class="img_active" src="assets/img/produits/IMG-20211214-WA0002.jpg" alt="">
+                </div>
+                <div class="contenu">
+                    <h3 class="nom">Sac pour femme</h3>
+                    <span class="prix">$34,72</span>
+                    <p class="detail">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga omnis rem odio explicabo amet maiores est autem quia at voluptatum.</p>
+                    <span class="no_achats">6532 personnes ont achetées</span>
+                </div>
+            </article>
+
+            <div class="couleurs">
+                <div class="couleur"><img src="assets/img/produits/IMG-20211216-WA0008.jpg" alt=""></div>
+                <div class="couleur"><img src="assets/img/produits//IMG-20211217-WA0008.jpg" alt=""></div>
+                <div class="couleur"><img src="assets/img/produits/IMG-20211124-WA0052.jpg" alt=""></div>
+                <div class="couleur"><img src="assets/img/produits/IMG-20211124-WA0062.jpg" alt=""></div>
+                <div class="couleur"><img src="assets/img/produits/IMG-20211124-WA0072.jpg" alt=""></div>
+                <div class="couleur"><img src="assets/img/produits/IMG-20211126-WA0016.jpg" alt=""></div>
+            </div>
+
+            <h3 class="titre">Numeros</h3>
+            <div class="numeros">
+                <div class="num">37</div>
+                <div class="num">38</div>
+                <div class="num">39</div>
+                <div class="num">40</div>
+                <div class="num">41</div>
+                <div class="num">42</div>
+                <div class="num">43</div>
+                <div class="num">44</div>
+                <div class="num">45</div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <h3>Autres produits</h3>
+        <div class="autres_articles">
+            <a href="">- Soulier fermé</a>
+            <a href="">- Pantalon pour homme</a>
+            <a href="">- Robes de mariages</a>
+            <a href="">- Pieces de rechange</a>
+            <a href="">- camnion</a>
+            <a href="">- motos</a>
+        </div>
+        <a href="">Store Mode2022_mai</a>
+    </footer>
+</body>
+</html>
+<script>
+    const img_active = document.querySelector('.img_active')
+    const couleurs = document.querySelectorAll('.couleurs .couleur')
+    for(let i = 0; i < couleurs.length; i++){
+        couleurs[i].addEventListener('click', function () {
+            img_active.src = this.querySelector('img').src
+        })
+    }
+</script>

@@ -1,0 +1,11 @@
+.publicites_de_priorites{
+    display: flex;
+    padding: 0 1em;
+    height: 20vh;
+    overflow: scroll;
+}
+.publicites_de_priorites img{
+    width: 350px;
+    border: 1em solid red;
+    float: right;
+}

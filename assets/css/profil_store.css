@@ -1,0 +1,34 @@
+header{
+    background: #ffffff;
+    grid-gap: 1em;
+    overflow: hidden;
+    overflow-y: auto;
+}
+.product_field{
+    padding: 1em;
+}
+.indicateur{
+    width: 100%;
+}
+.indicateur li{
+    padding: 1em;
+    padding-bottom: 0em;
+    border-radius: 1em;
+    justify-self: start;
+    float: left;
+    /* margin-right: 1em; */
+    margin-bottom: 2em;
+}
+.indicateur li a{
+    border-radius: 1em;
+    
+    font-size: 18px;
+    padding: .7em;
+    transition: .3s;
+    color: inherit;
+    background: rgb(223, 255, 255);
+}
+.indicateur li.active a{
+    background: var(--background);
+    color: #ffffff;
+}

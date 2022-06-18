@@ -1,0 +1,15 @@
+.sliders{
+    padding: 1em;
+    display: flex;
+    align-items: center;
+}
+.sliders .slider{
+    width: 200px;
+    height: 250px;
+    overflow: hidden;
+
+    border-radius: 1em;
+}
+.sliders .slider img{
+    width: 200px;
+}

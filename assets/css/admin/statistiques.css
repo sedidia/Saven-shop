@@ -1,0 +1,43 @@
+.icons{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: .7em;
+    background: var(--white);
+}
+.icons .icon{
+    /* padding: .5em; */
+    width: 30px;
+    height: 30px;
+    border-radius: 4px;
+    background: var(--background);
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+.icons i{
+    font-size: 20px;
+    color: var(--white);
+
+}
+
+.statistiques{
+    background: var(--white);
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
+}
+.statistiques .stat1{
+    margin-bottom: 1em;
+    width: 300px;
+    height: 300px;
+    border: 1em solid #e5e5e5;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payez maintenant</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/icomoon/style.css">
+    <link rel="stylesheet" href="assets/css/payez_maintenant.css">
+    <!-- preload -->
+    <link rel="stylesheet" href="assets/css/preloader.css">
+    <!-- preload -->
+
+    <script src="assets/js/onload.js" defer></script>
+</head>
+<body>
+    <div class="loader_container">
+        <div class="loader"></div>
+    </div>
+    <div class="page_loaded">
+        <div class="nav">
+            <a href="" class="faire_retour"><i class="icon-keyboard_backspace"></i></a>
+            <div class="nav_action">
+                <div class="total_to_pay">0</div>
+                <a href="" id="buy_now">Payez maintenant</a>
+            </div>
+        </div>
+        <div class="page_paiement">
+            <form action="" method="post"  class="product_to_cart">
+                <button type="submit">Payez maintenant</button>
+            </form>
+            <div class="idget"></div>
+        </div>
+
+        <div class="mode_de_paiement active">
+            <div class="card_pay">
+                <h1>CARD</h1>
+
+                <div class="btns_actions">
+                    <a href="" id="pas_encore">Pas encore</a>
+                    <a href="">Payez maintenant</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="server/js/payer_maintenant.js"></script>
+    <script src="server/js/agregateur/submit_saven_link.js"></script>
+</body>
+</html>

@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <!-- css -->
+        <!-- preload -->
+            <link rel="stylesheet" href="assets/css/preloader.css">
+        <!-- preload -->
+        <link rel="stylesheet" href="assets/css/carousel.css">
+        <link rel="stylesheet" href="assets/css/header.css">
+        <link rel="stylesheet" href="assets/css/produits.css">
+        <link rel="stylesheet" href="assets/css/user.css">
+        <link rel="stylesheet" href="assets/css/panier.css">
+        <link rel="stylesheet" href="assets/icomoon/style.css">
+        <link rel="stylesheet" href="assets/css/slider_pub.css">
+        <link rel="stylesheet" href="assets/css/auto_scroll.css">
+        <link rel="stylesheet" href="assets/css/recherche.css">
+        <link rel="stylesheet" href="assets/css/manue_utilisation.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+    <!-- css -->
+
+    <!-- js -->
+    <script src="assets/js/filter.js" defer></script>
+    <script src="assets/js/onload.js" defer></script>
+
+    <script src="server/js/user/varsGetData.js" defer></script>
+    <script src="server/js/recherche.js" defer></script>
+    <script src="server/js/rec_article.js" defer></script>
+    <script src="server/js/manuel_utilisation.js" defer></script>
+    <!-- js -->
+</head>
+<body>
+    <div class="loader_container">
+        <div class="loader"></div>
+    </div>
+    <div class="page_loaded">
+        <div id="haut_de_page"></div>
+        <div class="form_search">
+            <form action="" method="post">
+                <span class="close_modal_of_search">
+                    <i class="icon-close2"></i>
+                </span>
+                <div>
+                    <i class="icon-search2"></i>
+                    <input type="text" id="search_live" placeholder="Effectuer une recherche" class="search_form_input">
+                </div>
+            </form>
+            <div class="resultats">
+                
+            </div>
+            <div class="idget"></div>
+        </div>
+        <div class="header">
+            <!-- <div class="sliders">
+                <div class="slider">
+                    <img src="assets/img/produits/IMG-20211124-WA0052.jpg" alt="">
+                </div>
+            </div> -->
+    
+            <div class="nav">
+                <div>
+                    <h1 class="site_name">AVEL</h1>
+                </div>
+    
+                <div class="nav_right">
+                    <span class="search do_search_btn">
+                        <i class="icon-search2"></i>
+                        <i class="icon-close2"></i>
+                    </span>
+                    <div class="btn_panier">
+                        <i class="icon-cart-arrow-down"></i>
+                        <span class="n">3</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- bande de fin -->
+        <!-- <div class="bande1">Les Meilleurs produits du moment</div> -->
+        <!-- bande de fin -->
+
+        <!-- mon auto-play publicité -->
+        <!-- <div class="slider">
+            <div class="slide-track">
+                <div class="slide">
+                    <img src="assets/img/produits/IMG-20211124-WA0052.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="assets/img/produits/IMG-20211124-WA0052.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="assets/img/produits/IMG-20211124-WA0052.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="assets/img/produits/IMG-20211124-WA0052.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="assets/img/produits/IMG-20211124-WA0052.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="assets/img/produits/IMG-20211124-WA0052.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="assets/img/produits/IMG-20211124-WA0052.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="assets/img/produits/IMG-20211124-WA0052.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="assets/img/produits/IMG-20211124-WA0052.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="assets/img/produits/IMG-20211124-WA0052.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="assets/img/produits/IMG-20211124-WA0052.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="assets/img/produits/IMG-20211124-WA0052.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="assets/img/produits/IMG-20211124-WA0052.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="assets/img/produits/IMG-20211124-WA0052.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="assets/img/produits/IMG-20211124-WA0052.jpg" alt="">
+                </div>
+            </div>
+        </div> -->
+        <!-- mon auto-play publicité -->
+
+        <!-- bande de fin -->
+        <!-- <div class="bande">Les categories confodues</div> -->
+        <!-- bande de fin -->
+
+        <!-- gerer le filtre par categorie -->
+        <main class="main">
+            <header>
+                <div class="indicateur">
+                    <li data-filter="all" class="active"><a href="#">Tous</a></li>
+                    <!-- <li data-filter="Montre"><a href="#">Montre</a></li>
+                    <li data-filter="Chaussures"><a href="#">Chaussures</a></li>
+                    <li data-filter="Lit"><a href="#">Lits</a></li>
+                    <li data-filter="d"><a href="#">Lits</a></li>
+                    <li data-filter="d"><a href="#">Lits</a></li> -->
+                </div>
+            </header>
+            <div class="product_field">
+                <ul class="produits">
+                    <!-- <li data-category="">
+                        <span class="id_article">1</span>
+                        <div class="img">
+                            <img src="assets/img/produits/IMG-20211207-WA0003.jpg" alt="">
+                        </div>
+                        <div class="detail">
+                            <div class="icons">
+                                <a href="profil_store.html?id_store=1">
+                                    <img src="assets/img/faces/face17.jpg" alt="">
+                                </a>
+                                <a href="server/php/panier.php?id_article=1" class="add_to_cart"><i class="icon-cart-arrow-down"></i></a>
+                            </div>
+                            <div class="cat_and_q">
+                                <strong>Lit</strong>
+                                <p>(<span class="stock">35</span>)</p>
+                            </div>
+                        </div>
+                        <span class="price">45</span>
+                    </li>
+
+                    
+
+                    <li data-category="">
+                        <span class="id_article">${article.ids}</span>
+                        <span class="ids_autor">${article.ids_autor}</span>
+                        <div class="img">
+                            <span class="article_img">${article.article_img}</span>
+                            <img src="dynamic_img/articles/${article.article_img}" alt="">
+                        </div>
+                        <div class="detail">
+                            <div class="icons">
+                                <a href="profil_store.html?id_store=1">
+                                    <img src="assets/img/faces/face17.jpg" alt="">
+                                </a>
+                                <a href="server/php/panier.php?id_article=${article.ids}" class="add_to_cart"><i class="icon-cart-arrow-down"></i></a>
+                            </div>
+                            <div class="cat_and_q">
+                                <strong class="categorie">${article.categorie}</strong><br>
+                                <p class="nom_article">${article.nom}</p<br>
+                                <p class="article_detail">${article.detail}</p
+                            </div>
+                        </div>
+                        <span class="price">${article.prix}</span>
+                    </li>
+
+
+
+
+
+                    <li data-category="">
+                        <span class="id_article">3</span>
+                        <div class="img">
+                            <img src="assets/img/produits/IMG-20211129-WA0002.jpg" alt="">
+                        </div>
+                        <div class="detail">
+                            <div class="icons">
+                                <a href="profil_store.html?id_store=1">
+                                    <img src="assets/img/faces/face17.jpg" alt="">
+                                </a>
+                                <a href="server/php/panier.php?id_article=3" class="add_to_cart"><i class="icon-cart-arrow-down"></i></a>
+                            </div>
+                            <div class="cat_and_q">
+                                <strong>Montre</strong>
+                                <p>(<span class="stock">35</span>)</p>
+                                <i class="categorie"></i>
+                            </div>
+                            
+                            
+                        </div>
+                        <span class="price">45</span>
+                    </li>
+                    <li data-category="">
+                        <span class="id_article">4</span>
+                        <div class="img">
+                            <img src="assets/img/produits/IMG-20211128-WA0024.jpg" alt="">
+                        </div>
+                        <div class="detail">
+                            <div class="icons">
+                                <a href="profil_store.html?id_store=1">
+                                    <img src="assets/img/faces/face16.jpg" alt="">
+                                </a>
+                                <a href="server/php/panier.php?id_article=4" class="add_to_cart"><i class="icon-cart-arrow-down"></i></a>
+                            </div>
+                            <div class="cat_and_q">
+                                <strong>Montre</strong>
+                                <p>(<span class="stock">35</span>)</p>
+                                <i class="categorie"></i>
+                            </div>
+                            
+                            
+                        </div>
+                        <span class="price">45</span>
+                    </li>
+                    <li data-category="">
+                        <span class="id_article">5</span>
+                        <div class="img">
+                            <img src="assets/img/produits/IMG-20211129-WA0018.jpg" alt="">
+                        </div>
+                        <div class="detail">
+                            <div class="icons">
+                                <a href="profil_store.html?id_store=1">
+                                    <img src="assets/img/faces/face18.jpg" alt="">
+                                </a>
+                                <a href="server/php/panier.php?id_article=5" class="add_to_cart"><i class="icon-cart-arrow-down"></i></a>
+                            </div>
+                            <div class="cat_and_q">
+                                <strong>Montre</strong>
+                                <p>(<span class="stock">35</span>)</p>
+                                <i class="categorie"></i>
+                            </div>
+                            
+                            
+                        </div>
+                        <span class="price">45</span>
+                    </li>
+                    <li data-category="">
+                        <span class="id_article">6</span>
+                        <div class="img">
+                            <img src="assets/img/produits/IMG-20211129-WA0018.jpg" alt="">
+                        </div>
+                        <div class="detail">
+                            <div class="icons">
+                                <a href="profil_store.html?id_store=1">
+                                    <img src="assets/img/faces/face18.jpg" alt="">
+                                </a>
+                                <a href="server/php/panier.php?id_article=6" class="add_to_cart"><i class="icon-cart-arrow-down"></i></a>
+                            </div>
+                            <div class="cat_and_q">
+                                <strong>Montre</strong>
+                                <p>(<span class="stock">35</span>)</p>
+                                <i class="categorie"></i>
+                            </div>
+                            
+                            
+                        </div>
+                        <span class="price">45</span>
+                    </li>
+                    <li data-category="">
+                        <span class="id_article">7</span>
+                        <div class="img">
+                            <img src="assets/img/produits/IMG-20211130-WA0059.jpg" alt="">
+                        </div>
+                        <div class="detail">
+                            <div class="icons">
+                                <a href="profil_store.html?id_store=1">
+                                    <img src="assets/img/faces/face19.jpg" alt="">
+                                </a>
+                                <a href="server/php/panier.php?id_article=7" class="add_to_cart"><i class="icon-cart-arrow-down"></i></a>
+                            </div>
+                            <div class="cat_and_q">
+                                <strong>Chaussures</strong>
+                                <p>(<span class="stock">35</span>)</p>
+                                <i class="categorie"></i>
+                            </div>
+                            
+                            
+                        </div>
+                        <span class="price">45</span>
+                    </li>
+                    <li data-category="">
+                        <span class="id_article">8</span>
+                        <div class="img">
+                            <img src="assets/img/produits/IMG-20211213-WA0034.jpg" alt="">
+                        </div>
+                        <div class="detail">
+                            <div class="icons">
+                                <a href="profil_store.html?id_store=1">
+                                    <img src="assets/img/faces/face21.jpg" alt="">
+                                </a>
+                                <a href="server/php/panier.php?id_article=8" class="add_to_cart"><i class="icon-cart-arrow-down"></i></a>
+                            </div>
+                            <div class="cat_and_q">
+                                <strong>Montre</strong>
+                                <p>(<span class="stock">35</span>)</p>
+                                <i class="categorie"></i>
+                            </div>
+                            
+                            
+                        </div>
+                        <span class="price">45</span>
+                    </li>
+                    <li data-category="">
+                        <span class="id_article">9</span>
+                        <div class="img">
+                            <img src="assets/img/produits/IMG-20211126-WA0023.jpg" alt="">
+                        </div>
+                        <div class="detail">
+                            <div class="icons">
+                                <a href="profil_store.html?id_store=1">
+                                    <img src="assets/img/faces/face23.jpg" alt="">
+                                </a>
+                                <a href="server/php/panier.php?id_article=9" class="add_to_cart"><i class="icon-cart-arrow-down"></i></a>
+                            </div>
+                            <div class="cat_and_q">
+                                <strong>Chaussures</strong>
+                                <p>(<span class="stock">35</span>)</p>
+                                <i class="categorie"></i>
+                            </div>
+                            
+                            
+                        </div>
+                        <span class="price">45</span>
+                    </li>
+                    <li data-category="">
+                        <span class="id_article">10</span>
+                        <div class="img">
+                            <img src="assets/img/produits/IMG-20211213-WA0034.jpg" alt="">
+                        </div>
+                        <div class="detail">
+                            <div class="icons">
+                                <a href="profil_store.html?id_store=1">
+                                    <img src="assets/img/faces/face16.jpg" alt="">
+                                </a>
+                                <a href="server/php/panier.php?id_article=10" class="add_to_cart"><i class="icon-cart-arrow-down"></i></a>
+                            </div>
+                            <div class="cat_and_q">
+                                <strong>Montre</strong>
+                                <p>(<span class="stock">35</span>)</p>
+                                <i class="categorie"></i>
+                            </div>
+                            
+                            
+                        </div>
+                        <span class="price">45</span>
+                    </li>
+                    <li data-category="">
+                        <span class="id_article">11</span>
+                        <div class="img">
+                            <img src="assets/img/produits/IMG-20211124-WA0053.jpg" alt="">
+                        </div>
+                        <div class="detail">
+                            <div class="icons">
+                                <a href="profil_store.html?id_store=1">
+                                    <img src="assets/img/faces/face16.jpg" alt="">
+                                </a>
+                                <a href="server/php/panier.php?id_article=11" class="add_to_cart"><i class="icon-cart-arrow-down"></i></a>
+                            </div>
+                            <div class="cat_and_q">
+                                <strong>Chaussures</strong>
+                                <p>(<span class="stock">35</span>)</p>
+                                <i class="categorie"></i>
+                            </div>
+                            
+                            
+                        </div>
+                        <span class="price">45</span>
+                    </li>
+                    <li data-category="">
+                        <span class="id_article">12</span>
+                        <div class="img">
+                            <img src="assets/img/produits/IMG-20211216-WA0008.jpg" alt="">
+                        </div>
+                        <div class="detail">
+                            <div class="icons">
+                                <a href="profil_store.html?id_store=1">  
+                                    <img src="assets/img/faces/face16.jpg" alt="">
+                                </a>
+                                <a href="server/php/panier.php?id_article=12" class="add_to_cart"><i class="icon-cart-arrow-down"></i></a>
+                            </div>
+                            <div class="cat_and_q">
+                                <strong>Chaussures</strong>
+                                <p>(<span class="stock">35</span>)</p>
+                                <i class="categorie"></i>
+                            </div>
+                            
+                            
+                        </div>
+                        <span class="price">45</span>
+                    </li> -->
+                </ul>
+            </div>
+        </main>
+        <div class="panier">
+            <div class="head">
+                <i class="icon-arrow-left close_panier"></i>
+                <div class="total_to_pay">0</div>
+            </div>
+            <div>
+                <a href="panier.html" class="payez_maintenant"><i class="icon-attach_money"></i></a>
+                <div class="product_to_cart">
+                    
+                </div>
+                <div class="product_to_cart1">
+                    <!-- <i class="icon-cart-arrow-down"></i> -->
+                </div>
+                <!-- <div class="total_to_pay">0</div> -->
+            </div>
+        </div> 
+          
+        <a href="#haut_de_page" class="haut_de_page">
+            <i class="icon-angle-double-up"></i>
+        </a>
+
+        <div class="saven_success">
+            <div class="div">
+
+                <i class="icon-cart-arrow-down"></i>
+                <div class="coch">
+                    <i class="icon-check"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="manuel_utilisation active">
+            <div class="manuel">
+                <div class="etapes">
+                    <div class="etape">
+                        <div class="bd">
+                            <div class="srci">
+                                <i class="icon-cart-arrow-down"></i>
+                            </div>
+                            <p>Un clic sur cette iconne sur chaque produit vous permet d'ajouter un produit au panier.</p>
+                        </div>
+
+                        <div class="nextBtns"><a href="" id="go_next1">Compris</a></div>
+                    </div>
+                    <div class="etape">
+                        <div class="bd">
+                            <div class="srci">
+                                <i class="icon-cart-arrow-down"></i>
+                            </div>
+                            <p>Un clic sur cette iconne du coin superieur droite vous permet de gérer vos produits au panier.</p>
+                        </div>
+
+                        <div class="nextBtns"><a href="" id="go_next2">Compris</a></div>
+                    </div>
+                    <div class="etape">
+                        <div class="bd">
+                            <div class="srci">
+                                <i class="icon-dollar"></i>
+                            </div>
+                            <p>Un clic sur cette iconne du coin superieur droite vous permet d'aller payer vos produits.</p>
+                        </div>
+
+                        <div class="nextBtns"><a href="" id="go_next3">Compris</a></div>
+                    </div>
+                    <div class="etape">
+                        <div class="bd">
+                            <div class="srci">
+                                <i class="icon-search2"></i>
+                            </div>
+                            <p>Un clic dans cette barre en haut au milieu vous permet de faire une recherche rapide de vos produits.</p>
+                        </div>
+
+                        <div class="nextBtns"><a href="" id="go_next4">Compris</a></div>
+                    </div>
+                    <div class="etape">
+                        <div class="bd">
+                            <div class="srci">
+                                <i class="icon-mobile"></i>
+                            </div>
+                            <p>Prenez l'abitude de payer vos produits avec votre smart phone; le numerique nous facilite la tache.</p>
+                        </div>
+                        
+                        <div class="nextBtns"><a href="" id="go_next5">Compris</a></div>
+                    </div>
+                    <div class="etape">
+                        <div class="bd">
+                            <div class="srci">
+                                <i class="icon-heart-o"></i>
+                            </div>
+                            <p>Nous vous permettons de trouvez des produits assez rapidement sans que vous ne perdiez de temps.</p>
+                        </div>
+
+                        <div class="nextBtns"><a href="" id="go_next6">Compris</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <script src="assets/js/vars_g.js"></script>
+    <script src="assets/js/toggle_panier.js"></script>
+</body>
+</html>
+
+<!-- add item to cart -->
+<script>
+    // user infos
+    
+    // user infos    
+</script>
+
+<script>
+    const form_search = document.querySelector('.form_search')
+    
+    document.querySelector('.do_search_btn').addEventListener('click', function () {
+        form_search.classList.add('active')
+        // this.classList.add('active')
+    })
+    document.querySelector('.close_modal_of_search').addEventListener('click', function () {
+        form_search.classList.remove('active')
+        // this.classList.toggle('active')
+    })
+</script>

@@ -1,0 +1,86 @@
+.panier{
+    position: absolute;
+    top: 0em;
+    right: 0;
+    z-index: 99999;
+    width: 0;
+    height: 100vh;
+    overflow: hidden;
+    transition: linear .3s all;
+    border-radius: 5em;
+    border-top-left-radius: 50em;
+    border-bottom-left-radius: 50em;
+    background: #ffffff;
+}
+.panier.active{
+    top: 0;
+    overflow: none;
+    overflow-y: auto;
+    right: 0;
+    width: 350px;
+    /* height: 100%; */
+    z-index: 99999;
+    background: rgb(255, 255, 255);
+    border-left: 1px solid #e5e5e5;
+    padding: 1em;
+    border-radius: 0em;
+    border-top-left-radius: 0em;
+    border-bottom-left-radius: 0em;
+    position: fixed;
+}
+.product_to_cart.non_vide{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1em;
+    padding-top: 2em;
+}
+
+.product_to_cart .article{
+    height: 100px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 1em;
+}
+.product_to_cart .article .delete *{
+    /* transition: linear .4s all; */
+}
+.product_to_cart .article .delete{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transition: linear .3s all;
+}
+.product_to_cart .article:hover .delete{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.product_to_cart .article:hover .delete div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #f1f1f1;
+    border-radius: 1em;
+    padding-top: .5em;
+}
+.product_to_cart .article .delete span{
+    padding: 1em;
+    font-size: 20px;
+    color: black;
+}
+.product_to_cart .article .delete a{
+    background: #f1f1f1;
+    padding: 1em;
+    border-radius: 50%;
+    font-size: 20px;
+    color: red;
+}

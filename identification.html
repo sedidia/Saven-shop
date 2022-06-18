@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identifiez vous !</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/identification.css">
+    <link rel="stylesheet" href="assets/icomoon/style.css">
+</head>
+<body>
+    <div class="page_of_ident">
+        <div class="header flex justify-center align-center">
+            <h1>Ultra Market</h1>
+        </div>
+        <div class="select_option_id flex justify-center flex-column">
+            <div class="head_id">
+                <h1>Are you a shop ?</h1>
+                <p>Win your time by selling more on BM.</p>
+            </div>
+            <div class="btn_id grid one">
+                <span class="create_account">Create an account <i class="icon-angle-right"></i></span>
+                <span class="connect">Lon in <i class="icon-angle-right"></i></span>
+                <span class="simple_user">I'm a simple user <i class="icon-angle-right"></i></span>
+            </div>
+        </div>
+
+        <div class="content_connect">
+            <div class="head">
+                <span class="close_connect"><i class="icon-close2"></i></span>
+                <h1>Log in</h1>
+            </div>
+            <form action="" method="post" id="connexion" class="grid one">
+                <input type="text" name="nom2" id="nom2" placeholder="@Store name">
+                <input type="password" name="mdp2" id="mdp2" placeholder="password">
+                <div class="btn_confirm flex justify-end align-center">
+                    <button type="submit">Log in <i class="icon-angle-double-right"></i></button>
+                </div>
+            </form>
+        </div>
+        <div class="content_create_account">
+            <div class="head">
+                <span class="close_create"><i class="icon-close2"></i></span>
+                <h1>Create an account</h1>
+            </div>
+            <form action="" method="post" id="inscription" class="grid one">
+                <!-- <div class="payment_moyen">
+                    <div class="card">
+                        <i class="icon-credit-card-alt"></i>
+                    </div>
+                    <div class="card">
+                        <i class="icon-cc-mastercard"></i>
+                    </div>
+                    <div class="card">
+                        <span>Aiterl</span>
+                    </div>
+                    <div class="card">
+                        <span>Mpesa</span>
+                    </div>
+                    <div class="card">
+                        <span>Orange</span>
+                    </div>
+                </div> -->
+                
+                <input class="" type="text" name="nom1" id="nom1" placeholder="*Store name">
+                <input class="" type="text" name="adress1" id="adress1" placeholder="*Store adress">
+                <!-- <input class="" type="text" name="compte1" id="compte1" placeholder="*Payment account"> -->
+                <div class="code_pays">
+                    <span>+243</span>
+                    <input class="" type="text" name="tel1" id="tel1" placeholder="*Phone : 977077791">
+                </div>
+                <input class="" type="password" name="mdp1" id="mdp1" placeholder="*password">
+                <textarea class="" name="details" id="details" placeholder="Bio :"></textarea>
+                <div class="btn_confirm flex justify-end align-center">
+                    
+                    <button type="submit">Create it <i class="icon-angle-double-right"></i></button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="msg_form">
+    </div>
+
+    <div class="modal_info_valid">
+        <div>
+            <h1>Infos de validité</h1>
+            <p>Le nombre que doit contenir chaque chant sont : nom : plus de 3, adresse : plus de 5, Numéro : 9 (congolais), mot de passe : plus de 6.</p>
+        </div>
+    </div>
+
+    <script src="server/js/identification.js"></script>
+</body>
+</html>
+<script>
+    let connect = document.querySelector('.connect')
+    let create_account = document.querySelector('.create_account')
+    let close_create = document.querySelector('.close_create')
+    let close_connect = document.querySelector('.close_connect')
+
+    let content_create_account = document.querySelector('.content_create_account')
+    let content_connect = document.querySelector('.content_connect')
+    let select_option_id = document.querySelector('.select_option_id')
+
+    let modal_info_valid = document.querySelector('.modal_info_valid')
+    
+
+    connect.addEventListener('click', open_the_connect)
+    create_account.addEventListener('click', open_the_create)
+    close_create.addEventListener('click', close_the_create)
+    close_connect.addEventListener('click', close_the_connect)
+    document.querySelector('.simple_user').addEventListener('click', function () {
+        // redirection pour les utilisateurs simples (acheteurs)
+        window.location = "simple_user.html"
+    })
+
+
+    // functions
+    function open_the_connect(){
+        setTimeout(() => { 
+            content_connect.classList.add('active')
+        }, 1000);
+        select_option_id.classList.add('active')
+    }
+    function open_the_create(){
+        setTimeout(() => {  
+            content_create_account.classList.add('active')
+        }, 1000);
+        select_option_id.classList.add('active')
+
+        modal_info_valid.classList.add('active')
+        setTimeout(() => {
+            modal_info_valid.classList.remove('active')
+        }, 10000);
+    }
+    function close_the_connect(){
+        content_connect.classList.remove('active')
+        setTimeout(() => {
+            select_option_id.classList.remove('active')
+        }, 1000);
+    }
+    function close_the_create(){
+        content_create_account.classList.remove('active')
+        setTimeout(() => {
+            select_option_id.classList.remove('active')
+            modal_info_valid.classList.remove('active')
+        }, 1000);
+    }
+</script>

@@ -1,0 +1,70 @@
+.card_confirm{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+    width: 100%;
+    height: 100%;
+    /* background: var(--overlay_background); */
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    padding-top: 2em;
+}
+.card_confirm.active{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+    width: 100%;
+    height: 100%;
+    background: var(--overlay_background);
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    padding-top: 2em;
+    animation: fluide_aff2 .3s linear;
+}
+@keyframes fluide_aff2 {
+    0%{
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        background: var(--overlay_background);
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        padding-top: 2em;
+    }
+    0%{
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        background: var(--overlay_background);
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        padding-top: 2em;
+    }
+}
+.card_confirm > div{
+    padding: 1em;
+    background: var(--white);
+}
+.card_confirm > div p{
+    padding-bottom: 1em;
+}
+.card_confirm > div .btns_confirm button{
+    padding: .5em;
+    font-size: 18px;
+    background: var(--background);
+    color: var(--white);
+    border-radius: .3em;
+    cursor: pointer;
+}

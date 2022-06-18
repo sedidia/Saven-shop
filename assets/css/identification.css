@@ -1,0 +1,294 @@
+body{
+    background: var(--background);
+}
+body > div{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+ .header{
+    width: 100%;
+    height: 15vh;
+}
+  .header h1{
+    color: #ffffff;
+}
+  .identification{
+    width: 40%;
+    /* background: #e5e5e5;  */
+    padding: 1em; 
+}
+  form{
+    width: 40%;
+}
+.code_pays{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.code_pays span{
+  padding: .3em;
+}
+.avatar_et_nom{
+  display: flex;
+  align-items: center;
+}
+.avatar_et_nom .avatar_pro{
+  cursor: pointer;
+  height: 100%;
+}
+.avatar_et_nom .avatar_pro input{
+  padding: 0em 1em;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+.avatar_et_nom input[type="file"]{
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  font-size: 0;
+  background: none;
+}
+.code_pays input, .avatar_et_nom input[type="text"]{
+  width: 100%;
+}
+  input, textarea{
+    padding: 1em;
+    border-radius: .3em;
+    transition: all .3s linear;
+}
+  input:focus, textarea:focus{
+    border: 1px solid green;
+}
+  .head_id{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5em;
+}
+  .select_option_id{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: #ffffff;
+    width: 100%;
+    height: calc(100vh - 15vh);
+    border-top-left-radius: 2em;
+    border-top-right-radius: 2em;
+    padding: 1em;
+    transition: all linear .3s;
+}
+  .select_option_id.active{
+    position: absolute;
+    bottom: 0vh;
+    left: 0;
+    z-index: 1;
+    height: calc(100vh - 100vh);
+    overflow: hidden;
+    background: none;
+    width: 100%;
+    border-top-left-radius: 0em;
+    border-top-right-radius: 0em;
+    padding: 0em;
+}
+  .btn_id{
+    width: 33%;
+}
+  .btn_id span{
+    border: 1px solid var(--background);
+    padding: 1em;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 1em;
+    color: var(--background);
+}
+  .btn_id span:nth-child(1){
+    border: 1px solid var(--background);
+    background: var(--background);
+    padding: 1em;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 1em;
+    color: #ffffff;
+}
+  .btn_id span i{
+    transition: .3s;
+    padding-left: 0em;
+}
+  .btn_id span:hover i{
+    padding-left: 1em;
+}
+
+
+/* too modals parameters */
+  .content_create_account .head,  .content_connect .head{
+    padding: 1em;
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+}
+ .content_create_account,  .content_connect{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: #ffffff;
+    width: 100%;
+    height: calc(100vh - 100vh);
+    border-top-left-radius: 0em;
+    border-top-right-radius: 0em;
+    padding: 0em;
+    transition: all .1s;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+ .content_create_account.active,  .content_connect.active{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: #ffffff;
+    width: 100%;
+    height: 100vh;
+    padding: 1em;
+    overflow: none;
+}
+ .btn_confirm{
+    padding-right: .2em;
+}
+ .btn_confirm button{
+    padding: 1em;
+    border-radius: .5em;
+    background: var(--background);
+    font-size: 18px;
+    color: #fff;
+    cursor: pointer;
+    transition: all .3s;
+}
+ .btn_confirm button:hover{
+    padding: 1em;
+    border-radius: .7em;
+    background: var(--background);
+    font-size: 18px;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* info_valid */
+.modal_info_valid{
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1em;
+  z-index: 99999;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.modal_info_valid div{
+  width: 350px;
+  height: 0;
+  background: rgba(255, 255, 255, 0.1);
+  transform: skew(0deg);
+  box-shadow: 0px 0px 0px rgb(255, 255, 255);
+  padding: 0em;
+  border-radius: .2em;
+  overflow: hidden;
+  transition: linear .3s all;
+  animation: modal_info_val .3s linear;
+}
+@keyframes modal_info_val {
+  0%{
+    height: auto;
+  }
+  100%{
+    height: 0;
+  }
+}
+.modal_info_valid div h1, .modal_info_valid div p{
+  color: transparent;
+}
+.modal_info_valid.active div h1{
+  color: #454545;
+}
+.modal_info_valid.active div p{
+  color: #252525;
+}
+.modal_info_valid.active div{
+  width: 350px;
+  height: auto;
+  background: rgba(255, 255, 255, .99);
+  transform: skew(-1deg);
+  box-shadow: 0px 0px 5px rgb(213, 213, 213);
+  padding: 1em;
+  border-radius: 1em;
+  overflow: none;
+}
+.modal_info_valid.active div h1{
+  padding-bottom: .3em;
+}
+/* media query */
+@media screen and (max-width: 789px) {
+    form{
+        width: 80%;
+    }
+     .btn_id{
+        width: 50%;
+    }
+}
+@media screen and (max-width: 578px) {
+    form{
+        width: 98%;
+    }
+     .btn_id{
+        width: 85%;
+    }
+}
+
+/* moyen de paiement */
+ .payment_moyen{
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 1em;
+}
+ .payment_moyen div{
+    /* background: var(--background); */
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+ .payment_moyen div i,  .payment_moyen div span{
+    font-size: 24px;
+    transition: all .3s;
+}
+ .payment_moyen div:hover i,  .payment_moyen div:hover span{
+    font-size: 24px;
+    transition: all .3s;
+    color: var(--background);
+}
+
+ .msg_form{
+    position: absolute;
+    top: 20%;
+    left: -100%;
+    z-index: 99999;
+    padding: 1em;
+    background: var(--background);
+    border-top-right-radius: 1em;
+    border-bottom-right-radius: 1em;
+    color: #ffffff;
+    transition: all .3s;
+}
+ .msg_form.active{
+    left: 0;
+}

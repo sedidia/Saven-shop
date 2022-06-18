@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Store</title>
+    <link rel="stylesheet" href="../assets/css/preloader.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/card_confirm.css">
+    <link rel="stylesheet" href="../assets/icomoon/style.css">
+    <link rel="stylesheet" href="../assets/css/admin/admin_store.css">
+
+    <!-- script -->
+    <script src="../assets/js/onload.js" defer></script>
+    <script src="../assets/js/create_article.js" defer></script>
+    <script src="../server/js/control_values.js" defer></script>
+    <script src="../server/js/store/varsGetData.js" defer></script>
+    <script src="../server/js/create_article.js" defer></script>
+    <!-- <script src="../server/js/update_article.js" defer></script> -->
+</head>
+<body>
+    <div class="loader_container">
+        <div class="loader"></div>
+    </div>
+    <div class="page_loaded">
+        <div class="id_user"></div>
+        <header class="flex justify-center flex-column">
+            <a href="#">manage your store <span class="essaie"></span></a>
+            <form action="" method="post">
+                <div class="flex justify-center align-center">
+                    <i class="icon-search2"></i>
+                    <input type="search" placeholder="nom du produit à suprimer...">
+                </div>
+                <span class="create_article flex justify-center align-center">+</span>
+            </form>
+        </header>
+        <section>
+            <!-- <div class="articles1">
+                <div class="article flex justify-start align-center">
+                    <i class="icon-money"></i>
+                    <div>
+                        <span>$87236</span>
+                        <p>révenu</p>
+                    </div>
+                </div>
+                <div class="article flex justify-start align-center">
+                    <i class="icon-shopping_cart"></i>
+                    <div>
+                        <span>967230</span>
+                        <p>Panier maintenant</p>
+                    </div>
+                </div>
+                <div class="article flex justify-start align-center">
+                    <i class="icon-shopping_cart"></i>
+                    <div>
+                        <span>967230</span>
+                        <p>Totals</p>
+                    </div>
+                </div>
+                <div class="article flex justify-start align-center">
+                    <i class="icon-people"></i>
+                    <div>
+                        <span>17232</span>
+                        <p>Clients</p>
+                    </div>
+                </div>
+                <div class="article flex justify-start align-center">
+                    <i class="icon-important_devices"></i>
+                    <div>
+                        <span>726</span>
+                        <p>articles</p>
+                    </div>
+                </div>
+            </div> -->
+        </section>
+        <div class="form_create_article">
+            <div class="form_create">
+                <form action="" id="add_article" method="post" class="grid one" enctype="multipart/form-data">
+                    <label for="article_img">Article</label>
+                    <input type="file" id="article_img" name="article_img" multiple accept="image/x-png, image/gif, image/jpeg, image/jpg" />
+                    <input type="text" name="nom" id="nom" placeholder="Nom de l'article">
+                    <input type="text" name="contenu" id="contenu" placeholder="Description...">
+                    <input type="number" id="numero" name="prix" id="prix" placeholder="prix">
+                    
+                    <!-- <label for="categorie">Selectionnez la categorie</label> -->
+
+                    <select name="categorie" id="categorie" class="lcategorie">
+                        <option value="">Selectionnez la categorie</option>
+                    </select>
+                    
+                    <input type="text" id="categorie_n" name="categorie_n" id="categorie_n" placeholder="Nouvelle categorie">
+
+                    <div class="act_btns">
+                        <div>
+                            <button type="submit" class="submit">Créer</button>
+                            <span class="close_submit">Fermer</span>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+        <div class="end_section"><span>-----END-----</span></div> 
+        
+        <div class="open_profil">
+            <div class="profil btn_dash_pro_open">
+                <div class="img_profil">
+                    <img src="../assets/img/faces/face16.jpg" alt="">
+                </div>
+                <div>
+                    <h3>My Shop</h3>
+                    <span>The Shop name's</span>
+                </div>
+            </div>
+            <div class="spoiler">
+                <div class="spoiler1">
+                    
+                </div>
+            </div>
+            <div class="close_profil"><i class="icon-angle-double-down"></i></div>
+                
+        </div>
+
+        <!-- card_confirm -->
+        <div class="card_confirm">
+            <div>
+                <p>Voulez-vous suprimer cet article ?</p>
+                <div class="btns_confirm">
+
+                    <button class="dont_delete">Annuler</button>
+                    <button class="yes_delete">Confirmer</button>
+                </div>
+            </div>
+        </div>
+        <span class="session_id"></span>
+    </div>
+
+    <script>
+        const open_profil = document.querySelector('.open_profil')
+        const btn_dash_pro_open = document.querySelector('.btn_dash_pro_open')
+        const close_profil = document.querySelector('.close_profil')
+
+        btn_dash_pro_open.addEventListener('click', function () {
+            open_profil.classList.add('active')
+        })
+        close_profil.addEventListener('click', function () {
+            open_profil.classList.remove('active')
+        })
+    </script>
+</body>
+</html>
+<!-- recuperer les categories -->
+<script>
+    // ajouter les articles au panier  
+    function recuperer_categories(){
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", "../server/php/rec_article.php?param="+"recuperer_t_categories");
+
+        xhr.onload = function(){
+            const resultat = JSON.parse(xhr.responseText);
+
+            const html = resultat.reverse().map(function(categ){
+                return `
+                <option value="${categ.categorie}">${categ.categorie}</option>
+                `
+            }).join(' ');
+
+            const categories = document.querySelector('.lcategorie');
+            categories.innerHTML = categories.innerHTML + html;
+        }
+
+        xhr.send();
+    }
+
+    // const interval3 = window.setInterval(recuperer_categories, 00,1)
+    
+    recuperer_categories();
+</script>
